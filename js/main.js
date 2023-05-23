@@ -1,24 +1,25 @@
 (function () {
-  var setMenu = function () {
+  let setMenu = function () {
     // variables
-    var burgerMenu = document.querySelector(".burgerMenuContainer img");
-    var navBar = document.querySelector("nav");
-    var navBarStatus = false;
+    const burgerMenu = document.querySelector(".burgerMenuContainer img");
+    const navBar = document.querySelector("nav");
+    let navBarStatus = false;
     navBar.removeAttribute("style");
+
     // mobile menu
-    if (window.getComputedStyle(navBar).overflow == "hidden") {
-      var navHeight = navBar.offsetHeight;
+    let isMobileMenu = window.getComputedStyle(navBar).overflow === "hidden";
+
+    if (isMobileMenu) {
+      let navHeight = navBar.offsetHeight;
       navBar.style.height = "0px";
+
       burgerMenu.addEventListener("click", function () {
-        if (navBarStatus) {
-          navBarStatus = false;
-          navBar.style.height = "0px";
-          burgerMenu.setAttribute("src", "images/whiteMenu.svg");
-        } else {
-          navBarStatus = true;
-          navBar.style.height = navHeight + "px";
-          burgerMenu.setAttribute("src", "images/whiteClose.svg");
-        }
+        navBarStatus = !navBarStatus;
+        navBar.style.height = navBarStatus ? navHeight + "px" : "0px";
+        burgerMenu.setAttribute(
+          "src",
+          navBarStatus ? "images/whiteClose.svg" : "images/whiteMenu.svg"
+        );
       });
     } else {
       navBarStatus = false;
@@ -26,7 +27,9 @@
       burgerMenu.setAttribute("src", "images/whiteMenu.svg");
     }
   };
+
   setMenu();
+
   // resize
   window.addEventListener("resize", function () {
     setMenu();
