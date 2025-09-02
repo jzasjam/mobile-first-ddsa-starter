@@ -1,37 +1,34 @@
 (function () {
-  let setMenu = function () {
-    // variables
-    const burgerMenu = document.querySelector(".burgerMenuContainer img");
-    const navBar = document.querySelector("nav");
-    let navBarStatus = false;
-    navBar.removeAttribute("style");
+  const burgerMenu = document.querySelector(".burgerMenuContainer img");
+  const navBar = document.querySelector("nav");
 
-    // mobile menu
-    let isMobileMenu = window.getComputedStyle(navBar).overflow === "hidden";
+  // Toggles max-heights for animations
 
-    if (isMobileMenu) {
-      let navHeight = navBar.offsetHeight;
-      navBar.style.height = "0px";
+  if (!burgerMenu || !navBar) return; // safety check
 
-      burgerMenu.addEventListener("click", function () {
-        navBarStatus = !navBarStatus;
-        navBar.style.height = navBarStatus ? navHeight + "px" : "0px";
-        burgerMenu.setAttribute(
-          "src",
-          navBarStatus ? "images/whiteClose.svg" : "images/whiteMenu.svg"
-        );
-      });
+  const toggleMenu = () => {
+    navBar.classList.toggle("open");
+    burgerMenu.classList.toggle("open");
+  };
+
+  const updateMenuOnResize = () => {
+    console.info(window.getComputedStyle(navBar).overflow);
+    if (window.getComputedStyle(navBar).overflow === "hidden") {
+      // Mobile mode
+      navBar.classList.remove("desktop");
+      burgerMenu.style.display = "block";
     } else {
-      navBarStatus = false;
-      navBar.removeAttribute("style");
-      burgerMenu.setAttribute("src", "images/whiteMenu.svg");
+      // Desktop mode
+      navBar.classList.add("desktop");
+      navBar.classList.remove("open");
+      burgerMenu.classList.remove("open");
+      burgerMenu.style.display = "none";
     }
   };
 
-  setMenu();
+  burgerMenu.addEventListener("click", toggleMenu);
+  window.addEventListener("resize", updateMenuOnResize);
 
-  // resize
-  window.addEventListener("resize", function () {
-    setMenu();
-  });
+  // initial setup
+  updateMenuOnResize();
 })();
