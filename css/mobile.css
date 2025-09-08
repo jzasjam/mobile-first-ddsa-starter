@@ -73,6 +73,7 @@ nav ul li a {
 	text-decoration: none;
 	display: block;
 }
+
 .burgerMenuContainer img {
     cursor: pointer;
     width: 32px;
@@ -81,6 +82,7 @@ nav ul li a {
 
 /* default "menu" icon */
 .burgerMenuContainer img {
+	margin-top:1em;
     content: url("/images/whiteMenu.svg");
 }
 
