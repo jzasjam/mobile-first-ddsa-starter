@@ -62,7 +62,9 @@ nav ul {
 	margin: 0;
 	padding: 0;
 }
-
+nav ul:first-child {
+	border-top: 1px solid #ccc;
+}
 nav ul li {
 	padding: 8px 5px;
 	border-bottom: 1px solid #ccc;
@@ -72,6 +74,7 @@ nav ul li a {
 	color: #fff;
 	text-decoration: none;
 	display: block;
+	padding-left: 0.5em;
 }
 
 .burgerMenuContainer img {
