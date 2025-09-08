@@ -34,10 +34,11 @@ header h2 {
 .articles {
 	display: flex;
 	flex-wrap: wrap;
+	gap: 2%;
 }
 
 .articles>div {
-	flex-basis: 50%;
+	flex-basis: 49%;
 }
 
 .articles img {
