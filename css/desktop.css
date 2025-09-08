@@ -1,1 +1,79 @@
 /* Desktop Styles */
+
+main {
+	max-width: 1280px;
+	margin: 0 auto 8rem auto;
+}
+
+/* Header */
+header {
+	max-width: 1280px;
+	margin: auto;
+}
+.headerContainer {
+  padding-top: 20px;
+}
+
+/* Nav */
+.burgerMenuContainer {
+	display: none;
+}
+
+
+nav{
+	/* For mobile toggle */
+	overflow: visible;
+	margin-top:40px;
+	height: 80px;
+}
+nav.desktop {
+	flex: 1 1 auto;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+nav ul {
+	display: flex;
+}
+
+nav ul li {
+	padding: 4px;
+	border-bottom: none;
+}
+
+nav ul li a {
+	margin: 0 15px;
+	border: none;
+}
+
+nav ul li a:hover {
+	border-bottom: 3px solid #fff;
+}
+
+/* Article  */
+.articles {
+	flex-wrap: nowrap;
+	font-size: 1.2rem;
+}
+
+.articles>div {
+	flex: 1 1 25%;
+	padding: 0;
+	margin: 0 20px;
+}
+
+.articles>div:first-child {
+	margin-left: 0;
+}
+
+.articles>div:last-child {
+	margin-right: 0;
+}
+
+/* Footer */
+footer{
+  position:fixed;
+  bottom:0;
+  width:100%;
+}

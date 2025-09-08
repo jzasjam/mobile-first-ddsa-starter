@@ -1,1 +1,102 @@
 /* Mobile First */
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+/* Header */
+.headerContainer {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+/* Main */
+main {
+	margin: 0 10px
+}
+
+/* Header */
+header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+header>div {
+	padding: 10px;
+}
+
+header h2 {
+	color: #fff;
+}
+
+/* Flexbox for articles */
+.articles {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.articles>div {
+	flex-basis: 50%;
+}
+
+.articles img {
+	width: 100%;
+}
+
+/* Navigation */
+nav{
+    flex: 1 1 100%;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    max-height:0;
+}
+nav.open {
+    max-height: 500px;
+    /* expands naturally */
+}
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li {
+	padding: 8px 5px;
+	border-bottom: 1px solid #ccc;
+}
+
+nav ul li a {
+	color: #fff;
+	text-decoration: none;
+	display: block;
+}
+.burgerMenuContainer img {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+}
+
+/* default "menu" icon */
+.burgerMenuContainer img {
+    content: url("/images/whiteMenu.svg");
+}
+
+/* when open, show "close" icon */
+.burgerMenuContainer img.open {
+    content: url("/images/whiteClose.svg");
+}
+
+/* Footer */
+footer {
+	background: rgba(0, 0, 0, 0.8);
+	margin-top: 40px;
+	padding: 40px;
+}
+
+footer>div>p {
+	color: #fff;
+	text-align: center;
+	font-size: 0.8rem;
+}
