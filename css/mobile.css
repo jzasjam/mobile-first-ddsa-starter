@@ -83,12 +83,12 @@ nav ul li a {
 /* default "menu" icon */
 .burgerMenuContainer img {
 	margin-top:1em;
-    content: url("/images/whiteMenu.svg");
+    content: url("../images/whiteMenu.svg");
 }
 
 /* when open, show "close" icon */
 .burgerMenuContainer img.open {
-    content: url("/images/whiteClose.svg");
+    content: url("../images/whiteClose.svg");
 }
 
 /* Footer */
