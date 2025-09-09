@@ -1,3 +1,4 @@
+// Immediately Invoked Function Expression (IIFE) to avoid polluting global scope
 (function () {
   const burgerMenu = document.querySelector(".burgerMenuContainer img");
   const navBar = document.querySelector("nav");

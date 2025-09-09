@@ -49,11 +49,14 @@ header h2 {
 nav{
     flex: 1 1 100%;
     overflow: hidden;
-    transition: max-height 0.5s;
-    max-height:0;
+    /* transition: max-height 0.5s;
+    max-height:0; */
+	transition: height 0.5s;
+    height:0; 
 }
 nav.open {
-    max-height: 500px;
+    /* max-height: 500px; */
+	height: auto;
     /* expands naturally */
 }
 

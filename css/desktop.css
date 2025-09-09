@@ -15,7 +15,6 @@ header {
 	display: none;
 }
 
-
 nav{
 	/* For mobile toggle */
 	overflow: visible;
@@ -53,7 +52,7 @@ nav ul li a:hover {
 	margin-bottom: 0px;
 }
 
-
+/* Main */
 main {
 	max-width: 1280px;
 	margin: 0 auto 8rem auto;
